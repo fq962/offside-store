@@ -1,8 +1,30 @@
 @import "tailwindcss";
 
+@theme {
+  /* Backgrounds */
+  --color-bg-base:       #111414;
+  --color-bg-nav:        #010202;
+  --color-bg-surface:    #1A1F1F;
+  --color-bg-elevated:   #222929;
+
+  /* Accent — verde eléctrico, estética deportiva */
+  --color-accent:        #22D96E;
+  --color-accent-hover:  #1BB85C;
+  --color-accent-muted:  #155C35;
+
+  /* Foreground / texto */
+  --color-fg-primary:    #F0F4F2;
+  --color-fg-secondary:  #9AABA3;
+  --color-fg-muted:      #556560;
+
+  /* Bordes */
+  --color-border:        #2A3333;
+  --color-border-strong: #3D4F4D;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #111414;
+  --foreground: #F0F4F2;
 }
 
 body {
