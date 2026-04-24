@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Home",     href: "/" },
-  { label: "Camisas",  href: "/camisas" },
-  { label: "Ofertas",  href: "/ofertas" },
-  { label: "Nosotros", href: "/nosotros" },
+  { label: "Ligas",            href: "/ligas",            accent: false },
+  { label: "Equipos",          href: "/equipos",          accent: false },
+  { label: "Nuevos Productos", href: "/nuevos-productos", accent: true  },
+  { label: "Retro",            href: "/retro",            accent: false },
 ] as const;
 
 function CartIcon() {
@@ -86,7 +86,11 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm text-fg-secondary hover:text-accent transition-colors duration-150"
+                className={`text-base tracking-widest uppercase transition-colors duration-150 ${
+                  link.accent
+                    ? "text-accent hover:text-accent-hover"
+                    : "text-fg-secondary hover:text-fg-primary"
+                }`}
               >
                 {link.label}
               </Link>
@@ -121,7 +125,11 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-2 text-sm text-fg-secondary hover:text-accent transition-colors duration-150"
+                  className={`block py-2 text-base tracking-widest uppercase transition-colors duration-150 ${
+                      link.accent
+                        ? "text-accent hover:text-accent-hover"
+                        : "text-fg-secondary hover:text-fg-primary"
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
